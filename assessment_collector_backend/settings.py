@@ -141,5 +141,6 @@ CSRF_TRUSTED_ORIGINS = [
 
 ALLOWED_HOSTS = [
     "assessment-collector-backend.onrender.com",
-    "assessment-collector-frontend.vercel.app"
+    "assessment-collector-frontend.vercel.app",
+    "localhost"
 ]

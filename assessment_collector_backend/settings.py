@@ -129,6 +129,17 @@ ENV = "development"
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
-    "http://localhost:3000"
-    
+    "http://localhost:3000",
+    "https://assessment-collector-backend.onrender.com",
+    "https://assessment-collector-frontend.vercel.app"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://assessment-collector-backend.onrender.com",
+    "https://assessment-collector-frontend.vercel.app"
+]
+
+ALLOWED_HOSTS = [
+    "assessment-collector-backend.onrender.com",
+    "assessment-collector-frontend.vercel.app"
 ]

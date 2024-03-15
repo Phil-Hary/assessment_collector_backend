@@ -9,10 +9,16 @@ from api.serializers import FormResponsePayloadSerializer
 from api.utils import tranform_response
 
 class FormResposeViewSet(ViewSet):
-
+    """
+        This class contains the form response views
+    """
     @action(detail=False, methods=['post'], url_path="onSubmit")
     @response_handler
     def on_submit(self, request, form_name):
+        """
+            Handles the form response submission
+            Creates entries in the FormResponse and ResponseValue tables
+        """
         form = None
 
         serialized_payload = FormResponsePayloadSerializer(data=request.data)
@@ -45,6 +51,9 @@ class FormResposeViewSet(ViewSet):
     @action(detail=False, methods=['get'], url_path="responses")
     @response_handler
     def get_reponses(self, request, form_name):
+        """
+            Handles response retrieval for a given form
+        """
         form = None
         responses = []
 

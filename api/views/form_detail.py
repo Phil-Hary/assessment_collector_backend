@@ -8,6 +8,10 @@ from api.models import Form
 from api.serializers import FormConfigPayloadSerializer
 
 class FormDetailViewSet(ViewSet):
+    """
+        This class contains the form detail related views.
+        Holds the logic to get and update a form's config
+    """
     @action(detail=False, methods=['GET', "POST"], url_path="config")
     @response_handler
     def get_config(self, request, form_name):

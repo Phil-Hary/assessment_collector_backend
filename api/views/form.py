@@ -11,6 +11,9 @@ from api.decorators.response_handler import response_handler
 class FormApiView(APIView):
     @response_handler
     def get(self, request):
+        """
+            This view returns all the forms present in the db
+        """
         forms = Form.objects.all()
         serialized_form = FormModelSerializer(forms, many=True)
 
@@ -20,6 +23,9 @@ class FormApiView(APIView):
 
     @response_handler
     def post(self, request):
+        """
+            This view helps to create a new form, by validating the config
+        """
         form = None
 
         serialized_payload = CreateFormPayloadSerialzier(data=request.data)
